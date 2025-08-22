@@ -20,10 +20,11 @@ npm install
 Cambia los valores por los de tu base de datos.
 
 ```env
-PORT = 5100
-SERVER_DB = sistemadevotos.rzmmtox.mongodb.net
-DB_PASSWORD = prueba
-USER_DB = root
+PORT = 3000
+DB_NAME = SistemaDeVotos
+SERVER_DB = tu_server
+DB_PASSWORD = tu_contraseña
+USER_DB = tu_usuario
 ```
 
 ### 5. Ejecutar el servidor

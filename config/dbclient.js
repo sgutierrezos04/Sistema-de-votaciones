@@ -8,7 +8,7 @@ class dbClient {
     }
 
     async conectarDB() {
-        const queryString = `mongodb+srv://${process.env.USER_DB}:${process.env.DB_PASSWORD}@${process.env.SERVER_DB}/SistemaDeVotos?retryWrites=true&w=majority`
+        const queryString = `mongodb+srv://${process.env.USER_DB}:${process.env.DB_PASSWORD}@${process.env.SERVER_DB}/${process.env.DB_NAME}?retryWrites=true&w=majority`
         await mongoose.connect(queryString);
         console.log('Conexion a la base de datos hecha');
     }
