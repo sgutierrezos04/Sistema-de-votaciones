@@ -39,6 +39,9 @@ class candidateController {
     async borrarCandidato(req, res) {
         try {
             const { id } = req.params;
+            if (await candidate.hasVotes(id)) {
+                return res.status(400).json({ error: 'Un candidato con votos no puede ser borrado' });
+            }
             await candidate.deleteCandidate(id);
             res.status(200).json({ message: 'Candidato borrado' });
         } catch(e) {

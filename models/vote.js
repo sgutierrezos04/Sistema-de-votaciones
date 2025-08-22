@@ -22,7 +22,7 @@ class voteModel {
             { $project: {
                 _id: '$results.candidate_id',
                 totalVotes: '$results.totalVotes',
-                percentage: { $multiply: [ { $divide: [ '$results.totalVotes', '$total' ] }, 100 ] }
+                percentage: { $round: [ { $multiply: [ { $divide: [ '$results.totalVotes', '$total' ] }, 100 ] }, 2 ] }
                 } }
         ]);
 

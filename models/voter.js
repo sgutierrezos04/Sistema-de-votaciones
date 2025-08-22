@@ -28,6 +28,12 @@ class voterModel {
     async updateVoter(voter) {
         return await Voter.findByIdAndUpdate(voter._id, voter);
     }
+
+    // Usado para no permitir la eliminacion de un votante si este ya ha votado
+    async hasVoted(id) {
+        const voter = await Voter.findById(id);
+        return voter ? voter.has_voted : false;
+    }
 }
 
 export default new voterModel(); 

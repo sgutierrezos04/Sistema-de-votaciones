@@ -34,6 +34,12 @@ class candidateModel {
         const candidate = await Candidate.findById(id);
         return candidate.name;
     }
+
+    // Usado para no permitir la eliminacion de un candidato si este ya ha recibido votos
+    async hasVotes(id) {
+        const candidate = await Candidate.findById(id);
+        return candidate ? candidate.votes > 0 : false;
+    }
 }
 
 export default new candidateModel();
