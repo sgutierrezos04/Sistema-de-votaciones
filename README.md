@@ -25,6 +25,7 @@ DB_NAME = SistemaDeVotos
 SERVER_DB = tu_server
 DB_PASSWORD = tu_contraseña
 USER_DB = tu_usuario
+JWT_SECRET = mi_token
 ```
 
 ### 5. Ejecutar el servidor
