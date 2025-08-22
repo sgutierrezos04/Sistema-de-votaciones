@@ -31,6 +31,7 @@ Para saber cuales son las variables para la base de datos, guiate con el siguien
 
 mongodb+srv://${process.env.USER_DB}:${process.env.DB_PASSWORD}@${process.env.SERVER_DB}/${process.env.DB_NAME}?retryWrites=true&w=majority
 
+No tienes que cambiar JWT_SECRET.
 
 ### 5. Ejecutar el servidor
 
