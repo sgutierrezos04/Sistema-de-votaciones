@@ -27,6 +27,10 @@ DB_PASSWORD = tu_contraseña
 USER_DB = tu_usuario
 JWT_SECRET = mi_token
 ```
+Para saber cuales son las variables para la base de datos, guiate con el siguiente texto
+
+mongodb+srv://${process.env.USER_DB}:${process.env.DB_PASSWORD}@${process.env.SERVER_DB}/${process.env.DB_NAME}?retryWrites=true&w=majority
+
 
 ### 5. Ejecutar el servidor
 
