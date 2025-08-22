@@ -1,5 +1,7 @@
 import candidate from '../models/candidate.js';
 import voter from '../models/voter.js';
+import jsonwebtoken from 'jsonwebtoken';
+import 'dotenv/config';
 
 class candidateController {
     constructor() {}
@@ -11,7 +13,10 @@ class candidateController {
                 return res.status(404).json({ error: 'Un votante no puede ser candidato' });
             }
             const data = await candidate.createCandidate(req.body);
-            res.status(201).json(data);
+
+            const token = jsonwebtoken.sign({ id: data.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+            res.status(201).json({ data, token });
         } catch(e) {
             res.status(500).json({ error: e.message });
         }

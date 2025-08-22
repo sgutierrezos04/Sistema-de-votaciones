@@ -55,6 +55,7 @@ USER_DB = tu_usuario
 #### 1. Registrar candidato
  - Metodo: POST
  - URL : http://localhost:3000/candidates
+ - Se crea un token para poder eliminar al candidato.
 
 #### 2. Obtener todos los candidatos
  - Metodo: GET
@@ -67,6 +68,8 @@ USER_DB = tu_usuario
 #### 4. Eliminar candidato
  - Metodo: DELETE
  - URL : http://localhost:3000/candidates/68a80ccb2cdbb4e8bd0965af
+ - Se necesita token para realizar la solicitud.
+ - En POSTMAN, en la pestaña Authorization: Bearer Token, ahi agregas el token conseguido en el registro. 
 
 ### Votos
 #### 1. Registrar voto
